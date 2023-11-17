@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
     <div className="bg-white flex justify-center items-center w-screen h-screen">
@@ -19,12 +21,11 @@ export default function Home() {
             rewarding adventure!
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-y-4 sm:flex-row sm:justify-center sm:gap-x-6">
-            <a
-              href="#"
-              className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition duration-300 ease-in-out"
-            >
-              Get started now
-            </a>
+            <Link href="/sign-in">
+              <button className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition duration-300 ease-in-out">
+                Get started now
+              </button>
+            </Link>
           </div>
         </div>
       </div>
