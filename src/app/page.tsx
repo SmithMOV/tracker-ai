@@ -1,32 +1,69 @@
 import Link from 'next/link';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
-    <div className="bg-white flex justify-center items-center w-screen h-screen">
-      <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="heading-font text-3xl font-bold tracking-tight sm:text-4xl">
-            <span className="text-indigo-700">Elevate your productivity</span>{' '}
-            with our{' '}
-            <span className="text-green-600">AI-driven Job Tracker</span>!
-            <br />
-            Experience work like never before.
-          </h2>
-          <p className="body-font mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-700">
-            Unleash the power of{' '}
-            <span className="text-purple-600">artificial intelligence</span>,
-            track insightful <span className="text-blue-600">data metrics</span>
-            , and enjoy the thrill of{' '}
-            <span className="text-red-600">gamification</span>. Make work a
-            rewarding adventure!
-          </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-y-4 sm:flex-row sm:justify-center sm:gap-x-6">
-            <Link href="/sign-in">
-              <button className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition duration-300 ease-in-out">
-                Get started now
-              </button>
-            </Link>
+    <div className="relative bg-gradient-to-r from-blue-500 to-purple-500 h-screen flex items-center justify-center overflow-hidden">
+      {/* <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="absolute inset-0 bg-cover bg-center z-0"
+        style={{ backgroundImage: 'url("/path/to/your/animated-bg.gif")' }}
+      ></motion.div> */}
+
+      <div className="absolute inset-0 bg-black opacity-50 z-1"></div>
+
+      <div className="relative z-2 mx-auto max-w-2xl text-center text-white">
+        <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
+          <span className="text-yellow-300">Revolutionize your job search</span>{' '}
+          with our <span className="text-green-300">Job Tracker AI</span>!
+        </h2>
+        <p className="mx-auto mt-6 max-w-xl text-lg leading-8">
+          Elevate your job hunting experience with cutting-edge technology and
+          personalized insights.
+        </p>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Bento Box 1 */}
+          <div className="bg-white rounded-lg overflow-hidden shadow-md p-6 transform transition-transform hover:scale-105 duration-300">
+            <h3 className="text-black text-xl font-semibold mb-3 text-center">
+              Track Applications
+            </h3>
+            <p className="text-gray-700 text-center">
+              Effortlessly organize and track all your job applications in one
+              centralized location.
+            </p>
           </div>
+
+          {/* Bento Box 2 */}
+          <div className="bg-white rounded-lg overflow-hidden shadow-md p-6 transform transition-transform hover:scale-105 duration-300">
+            <h3 className=" text-black text-xl font-semibold mb-3">
+              AI Insights
+            </h3>
+            <p className="text-gray-700">
+              Gain valuable insights into your job search with the help of
+              advanced AI algorithms.
+            </p>
+          </div>
+
+          {/* Bento Box 3 */}
+          <div className="bg-white rounded-lg overflow-hidden shadow-md p-6 transform transition-transform hover:scale-105 duration-300">
+            <h3 className="text-black text-xl font-semibold mb-3">
+              Gamified Experience
+            </h3>
+            <p className="text-gray-700">
+              Make job hunting enjoyable and rewarding through gamification
+              features.
+            </p>
+          </div>
+        </div>
+        <div className="mt-10">
+          <Link href="/sign-up">
+            <button className="rounded-full bg-orange-500 px-6 py-3 text-lg font-semibold text-white shadow-md hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 transition duration-300 ease-in-out">
+              Get Started
+            </button>
+          </Link>
         </div>
       </div>
     </div>
