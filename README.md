@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Job Tracker Web App
+
+![App Screenshot](./path/to/screenshot.png)
+
+## Overview
+
+Welcome to the Job Tracker Web App! This application helps you manage your job applications efficiently, leveraging AI, data metrics, and gamification features.
+
+### Features
+
+- **AI Assistance:** Utilize artificial intelligence to enhance job searching and application processes.
+- **Data Metrics:** Track and analyze your job search progress with insightful data metrics.
+- **Gamification:** Make job hunting engaging and rewarding with gamified elements.
+
+## Tech Stack
+
+- **Framework:** Next.js
+- **Frontend:** React, TypeScript
+- **Authentication:** [Clerk](https://docs.clerk.dev/)
+- **UI Library:** [Chakra UI](https://chakra-ui.com/), Tailwind CSS
+- **Testing:** [Vitest](https://vitest.dev/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Database:** SQL (Specify your SQL database here)
+- **Deployment:** [Vercel](https://vercel.com/)
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up and run the project locally:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/job-tracker-app.git
+   cd job-tracker-app
+   npm install
+   ```
+2. **Set up environment variables:**
+   ```bash
+   Create a .env file in the root directory and add the necessary environment variables. (Refer to a sample .env.sample if provided)
+   ```
+3. **Run the app::**
+   ```bash
+   npm run dev
+   ```
+   
