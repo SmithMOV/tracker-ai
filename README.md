@@ -1,4 +1,4 @@
-# Job Tracker Web App
+# Job Tracker AI
 
 ![App Screenshot](./path/to/screenshot.png)
 
