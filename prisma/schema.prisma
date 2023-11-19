@@ -6,10 +6,55 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
   relationMode = "prisma"
 }
 
+//User Model
 
-//write prisma schema here
+model User {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  clerkId String     @unique
+  email   String     @unique
+  jobs    JobEntry[]
+}
+
+//Job Model
+model JobEntry {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  position String  @db.VarChar(255)
+  company  String  @db.VarChar(255)
+  status   String  @db.VarChar(255)
+  location String  @db.VarChar(255)
+  link     String  @db.VarChar(255)
+  notes    String? @db.VarChar(255)
+
+  analysis Analysis?
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+}
+
+model Analysis {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  entryId String
+  user    JobEntry @relation(fields: [entryId], references: [id])
+
+  summary      String @db.Text
+  color        String
+  reinforcment String @db.Text
+
+  @@unique([entryId])
+}
