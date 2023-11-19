@@ -1,5 +1,3 @@
-//this this middleware file is used to protect the routes provided by Clerk
-
 import { authMiddleware } from '@clerk/nextjs';
 
 export default authMiddleware({

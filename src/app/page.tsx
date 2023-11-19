@@ -1,7 +1,11 @@
+import { auth } from '@clerk/nextjs';
 import Link from 'next/link';
 import React from 'react';
 
-export default function Home() {
+export default async function Home() {
+  const { userId } = await auth();
+
+  let href = userId ? '/jobs' : '/new-user';
   return (
     <div className="relative bg-gradient-to-r from-blue-500 to-purple-500 h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-black opacity-50 z-1"></div>
@@ -54,7 +58,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-10">
-          <Link href="/sign-up">
+          <Link href={href}>
             <button className="rounded-full bg-orange-500 px-6 py-3 text-lg font-semibold text-white shadow-md hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 transition duration-300 ease-in-out">
               Get Started
             </button>
