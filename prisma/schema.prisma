@@ -14,13 +14,13 @@ datasource db {
 //User Model
 
 model User {
-  id        String   @id @default(uuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  clerkId String     @unique
-  email   String     @unique
-  jobs    JobEntry[]
+  id        String         @id @default(uuid())
+  email     String         @unique
+  clerkId   String         @unique
+  name      String?
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  jobs     JobEntry[]
 }
 
 //Job Model

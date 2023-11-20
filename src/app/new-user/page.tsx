@@ -4,6 +4,7 @@ import { currentUser } from '@clerk/nextjs';
 
 const createNewUser = async () => {
   const user = await currentUser();
+  console.log(user);
 
   const match = await prisma.user.findUnique({
     where: {
@@ -14,13 +15,13 @@ const createNewUser = async () => {
   if (!match) {
     await prisma.user.create({
       data: {
-        clerkId: user.id as string,
-        email: user.emailAddresses[0].emailAddress,
+        clerkId: user.id,
+        email: user?.emailAddresses[0].emailAddress,
       },
     });
-
-    redirect('/dashboard');
   }
+
+  redirect('/jobs');
 };
 
 const NewUser = async () => {
