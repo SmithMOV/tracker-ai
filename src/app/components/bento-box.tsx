@@ -1,9 +1,9 @@
 import React from 'react';
 
-interface BentoBoxProps {
+type BentoBoxProps = {
   title: string;
   description: string;
-}
+};
 
 export default function BentoBox({ title, description }: BentoBoxProps) {
   return (
