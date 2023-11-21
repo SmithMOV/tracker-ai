@@ -1,6 +1,25 @@
 import Link from 'next/link';
 import React from 'react';
 import { motion } from 'framer-motion';
+import BentoBox from './components/bento-box';
+
+const bentoBoxVariants = [
+  {
+    title: 'Track Applications',
+    description:
+      'Effortlessly organize and track all your job applications in one centralized location.',
+  },
+  {
+    title: 'AI Insights',
+    description:
+      'Gain valuable insights into your job search with the help of advanced AI algorithms.',
+  },
+  {
+    title: 'Gamified Experience',
+    description:
+      'Make job hunting enjoyable and rewarding through gamification features.',
+  },
+];
 
 export default function Home() {
   return (
@@ -25,38 +44,13 @@ export default function Home() {
           personalized insights.
         </p>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Bento Box 1 */}
-          <div className="bg-white rounded-lg overflow-hidden shadow-md p-6 transform transition-transform hover:scale-105 duration-300">
-            <h3 className="text-black text-xl font-semibold mb-3 text-center">
-              Track Applications
-            </h3>
-            <p className="text-gray-700 text-center">
-              Effortlessly organize and track all your job applications in one
-              centralized location.
-            </p>
-          </div>
-
-          {/* Bento Box 2 */}
-          <div className="bg-white rounded-lg overflow-hidden shadow-md p-6 transform transition-transform hover:scale-105 duration-300">
-            <h3 className=" text-black text-xl font-semibold mb-3">
-              AI Insights
-            </h3>
-            <p className="text-gray-700">
-              Gain valuable insights into your job search with the help of
-              advanced AI algorithms.
-            </p>
-          </div>
-
-          {/* Bento Box 3 */}
-          <div className="bg-white rounded-lg overflow-hidden shadow-md p-6 transform transition-transform hover:scale-105 duration-300">
-            <h3 className="text-black text-xl font-semibold mb-3">
-              Gamified Experience
-            </h3>
-            <p className="text-gray-700">
-              Make job hunting enjoyable and rewarding through gamification
-              features.
-            </p>
-          </div>
+          {bentoBoxVariants.map((bentoBoxVariant, index) => (
+            <BentoBox
+              key={index}
+              title={bentoBoxVariant.title}
+              description={bentoBoxVariant.description}
+            />
+          ))}
         </div>
         <div className="mt-10">
           <Link href="/sign-up">
