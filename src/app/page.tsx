@@ -3,6 +3,24 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import BentoBox from './components/bento-box';
 
+const bentoBoxVariants = [
+  {
+    title: 'Track Applications',
+    description:
+      'Effortlessly organize and track all your job applications in one centralized location.',
+  },
+  {
+    title: 'AI Insights',
+    description:
+      'Gain valuable insights into your job search with the help of advanced AI algorithms.',
+  },
+  {
+    title: 'Gamified Experience',
+    description:
+      'Make job hunting enjoyable and rewarding through gamification features.',
+  },
+];
+
 export default function Home() {
   return (
     <div className="relative bg-gradient-to-r from-blue-500 to-purple-500 h-screen flex items-center justify-center overflow-hidden">
@@ -26,18 +44,13 @@ export default function Home() {
           personalized insights.
         </p>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <BentoBox
-            title="Track Applications"
-            description="Effortlessly organize and track all your job applications in one centralized location."
-          />
-          <BentoBox
-            title="AI Insights"
-            description="Gain valuable insights into your job search with the help of advanced AI algorithms."
-          />
-          <BentoBox
-            title="Gamified Experience"
-            description="Make job hunting enjoyable and rewarding through gamification features."
-          />
+          {bentoBoxVariants.map((bentoBoxVariant, index) => (
+            <BentoBox
+              key={index}
+              title={bentoBoxVariant.title}
+              description={bentoBoxVariant.description}
+            />
+          ))}
         </div>
         <div className="mt-10">
           <Link href="/sign-up">
